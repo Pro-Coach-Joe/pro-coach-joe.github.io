@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Premier Health & Lifestyle — high-touch nutrition and lifestyle coaching for busy women who are done starting over. Work with Precision Nutrition Level 2 Master Coach Joe Shanley.">
+<title>Pro Coach Joe — Premier Health &amp; Lifestyle</title>
+<style>
+  :root {
+    --brand: #3a7c6e;
+    --brand-dark: #2a5c52;
+    --brand-light: #e8f3f0;
+    --cream: #f5ede6;
+    --accent: #c0622a;
+    --border: #d9cfc8;
+    --text: #1e2a28;
+    --muted: #6b7b77;
+    --white: #ffffff;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--white); color: var(--text); }
+
+  /* NAV */
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 14px 28px; display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo { font-size: .95rem; font-weight: 800; color: var(--brand-dark); letter-spacing: -.3px; }
+  .nav-logo span { color: var(--brand); }
+  .nav-links { display: flex; gap: 8px; align-items: center; }
+  .nav-links a { font-size: .82rem; font-weight: 600; color: var(--muted); text-decoration: none; padding: 6px 12px; border-radius: 7px; transition: color .15s, background .15s; }
+  .nav-links a:hover { color: var(--brand-dark); background: var(--brand-light); }
+  .btn-nav { background: var(--brand) !important; color: white !important; border-radius: 8px !important; }
+  .btn-nav:hover { background: var(--brand-dark) !important; }
+  @media (max-width: 560px) { .nav-links .hide-mobile { display: none; } }
+
+  /* HERO */
+  .hero { background: linear-gradient(160deg, var(--brand-dark) 0%, var(--brand) 60%, #4a9e8e 100%); color: white; padding: 90px 24px 80px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+  .hero-inner { position: relative; max-width: 680px; margin: 0 auto; }
+  .hero-badge { display: inline-block; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25); border-radius: 20px; padding: 5px 14px; font-size: .75rem; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; margin-bottom: 22px; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; line-height: 1.1; letter-spacing: -.5px; margin-bottom: 20px; }
+  .hero h1 em { font-style: normal; color: #a8e6db; }
+  .hero p { font-size: 1.05rem; line-height: 1.65; opacity: .88; max-width: 520px; margin: 0 auto 36px; }
+  .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: white; color: var(--brand-dark); padding: 15px 32px; border-radius: 10px; font-size: .95rem; font-weight: 800; text-decoration: none; transition: transform .1s, box-shadow .15s; box-shadow: 0 4px 16px rgba(0,0,0,.18); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.22); }
+  .btn-secondary { background: rgba(255,255,255,.12); color: white; padding: 15px 32px; border-radius: 10px; font-size: .95rem; font-weight: 700; text-decoration: none; border: 1px solid rgba(255,255,255,.3); transition: background .15s; }
+  .btn-secondary:hover { background: rgba(255,255,255,.22); }
+
+  /* TRUST BAR */
+  .trust-bar { background: var(--cream); border-bottom: 1px solid var(--border); padding: 18px 24px; }
+  .trust-inner { max-width: 860px; margin: 0 auto; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
+  .trust-item { display: flex; align-items: center; gap: 8px; font-size: .8rem; font-weight: 600; color: var(--muted); }
+  .trust-item .icon { font-size: 1rem; }
+
+  /* SECTIONS */
+  section { padding: 80px 24px; }
+  .section-inner { max-width: 900px; margin: 0 auto; }
+  .section-label { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--brand); margin-bottom: 10px; }
+  .section-title { font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-weight: 900; line-height: 1.2; letter-spacing: -.3px; color: var(--text); margin-bottom: 16px; }
+  .section-sub { font-size: .98rem; color: var(--muted); line-height: 1.7; max-width: 560px; }
+
+  /* PAIN */
+  .pain { background: var(--text); color: white; }
+  .pain .section-title { color: white; }
+  .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 48px; }
+  .pain-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius); padding: 28px 24px; }
+  .pain-card .q { font-size: 1.1rem; font-weight: 800; margin-bottom: 10px; color: #a8e6db; }
+  .pain-card p { font-size: .88rem; line-height: 1.65; opacity: .78; }
+
+  /* ABOUT */
+  .about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 60px; align-items: center; margin-top: 48px; }
+  @media (max-width: 680px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
+  .about-img { background: linear-gradient(135deg, var(--brand-light), var(--brand)); border-radius: var(--radius); aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; font-size: 5rem; }
+  .about-content h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 14px; letter-spacing: -.3px; }
+  .about-content p { font-size: .93rem; line-height: 1.75; color: var(--muted); margin-bottom: 16px; }
+  .creds { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; }
+  .cred { display: flex; align-items: center; gap: 10px; font-size: .83rem; font-weight: 600; color: var(--brand-dark); }
+  .cred::before { content: '✓'; width: 20px; height: 20px; background: var(--brand-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .7rem; color: var(--brand); flex-shrink: 0; }
+
+  /* HOW IT WORKS */
+  .how { background: var(--cream); }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 48px; }
+  .step { background: white; border-radius: var(--radius); border: 1px solid var(--border); padding: 32px 24px; position: relative; text-decoration: none; color: inherit; transition: transform .15s, box-shadow .15s; display: block; }
+  .step:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(42,92,82,.12); }
+  .step-num { width: 42px; height: 42px; background: var(--brand); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .9rem; font-weight: 800; margin-bottom: 18px; }
+  .step h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 8px; color: var(--brand-dark); }
+  .step p { font-size: .85rem; line-height: 1.65; color: var(--muted); }
+  .step-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 16px; font-size: .82rem; font-weight: 700; color: var(--brand); }
+  .step-arrow { font-size: 1rem; }
+
+  /* WHAT YOU GET */
+  .offer { background: white; }
+  .offer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 48px; }
+  @media (max-width: 620px) { .offer-grid { grid-template-columns: 1fr; } }
+  .offer-item { background: var(--brand-light); border-radius: 10px; padding: 22px 20px; display: flex; gap: 14px; }
+  .offer-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+  .offer-item h4 { font-size: .9rem; font-weight: 700; color: var(--brand-dark); margin-bottom: 4px; }
+  .offer-item p { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+
+  /* CTA BLOCK */
+  .cta-block { background: linear-gradient(135deg, var(--brand-dark), var(--brand)); color: white; text-align: center; padding: 80px 24px; }
+  .cta-block h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 900; line-height: 1.2; margin-bottom: 14px; letter-spacing: -.3px; }
+  .cta-block p { font-size: 1rem; opacity: .85; max-width: 480px; margin: 0 auto 36px; line-height: 1.65; }
+  .cta-block .btn-primary { display: inline-block; }
+
+  /* FOOTER */
+  footer { background: var(--text); color: rgba(255,255,255,.6); padding: 40px 24px; text-align: center; }
+  footer .footer-logo { font-size: 1rem; font-weight: 800; color: white; margin-bottom: 8px; }
+  footer p { font-size: .8rem; line-height: 1.7; }
+  footer a { color: rgba(255,255,255,.5); text-decoration: none; }
+  footer a:hover { color: white; }
+  .footer-links { display: flex; justify-content: center; gap: 20px; margin-top: 16px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Pro Coach <span>Joe</span></div>
+  <div class="nav-links">
+    <a href="#about" class="hide-mobile">About</a>
+    <a href="#how-it-works" class="hide-mobile">How It Works</a>
+    <a href="https://pro-coach-joe.github.io/sabotage-quiz/" target="_blank">Take the Quiz</a>
+    <a href="#get-started" class="btn-nav">Book a Call</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Premier Health &amp; Lifestyle</div>
+    <h1>Done Starting Over.<br><em>Let's Build Something That Lasts.</em></h1>
+    <p>High-touch nutrition and lifestyle coaching for busy women who want to feel confident, energized, and in control — without giving up their real life to do it.</p>
+    <div class="hero-btns">
+      <a href="https://pro-coach-joe.github.io/sabotage-quiz/" class="btn-primary">Find Your Sabotage Style →</a>
+      <a href="#get-started" class="btn-secondary">Book a Free Game Plan Call</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="icon">🎓</span> Precision Nutrition Level 2 Master Coach</div>
+    <div class="trust-item"><span class="icon">💪</span> NASM Certified Trainer</div>
+    <div class="trust-item"><span class="icon">📍</span> Jackson, CA &amp; Online</div>
+    <div class="trust-item"><span class="icon">📱</span> Powered by Trainerize</div>
+  </div>
+</div>
+
+<!-- PAIN POINTS -->
+<section class="pain" id="why">
+  <div class="section-inner">
+    <div class="section-label">Sound familiar?</div>
+    <h2 class="section-title">You've tried. You're not the problem.<br>The plan was.</h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="q">"I know what to do — I just can't stay consistent."</div>
+        <p>You're not lacking willpower. You're missing a system that fits around your actual schedule, not an ideal one.</p>
+      </div>
+      <div class="pain-card">
+        <div class="q">"I've lost the same 20 lbs three times already."</div>
+        <p>Restrictive plans work until life happens. What you need are habits that bend with your life instead of breaking when it gets hard.</p>
+      </div>
+      <div class="pain-card">
+        <div class="q">"I'm exhausted, and I don't even feel like myself."</div>
+        <p>Low energy isn't just a fitness problem — it's a lifestyle problem. We fix both, together, week by week.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img">🏋️</div>
+      <div class="about-content">
+        <div class="section-label">Your Coach</div>
+        <h3>Hey, I'm Coach Joe.</h3>
+        <p>I'm a Precision Nutrition Level 2 Certified Master Coach and NASM-certified trainer. I run Premier Health &amp; Lifestyle out of Jackson, CA — and work with clients online across the country.</p>
+        <p>I specialize in one thing: helping busy women build a nutrition and fitness plan that actually fits their real life. Not the life they wish they had. The one with work, kids, stress, and a full calendar.</p>
+        <p>My approach is high-touch and personal. You get a custom plan, direct coaching support, and someone in your corner making adjustments every single week — not a template and a Facebook group.</p>
+        <div class="creds">
+          <div class="cred">Precision Nutrition Level 2 Master Coach</div>
+          <div class="cred">NASM Certified Personal Trainer</div>
+          <div class="cred">16-week transformation programs</div>
+          <div class="cred">Online &amp; in-person coaching available</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how-it-works">
+  <div class="section-inner">
+    <div class="section-label">Getting Started</div>
+    <h2 class="section-title">Three steps to your Game Plan</h2>
+    <p class="section-sub">No guesswork, no waiting. Here's exactly how we go from stranger to a plan built for you.</p>
+    <div class="steps">
+      <a href="https://pro-coach-joe.github.io/sabotage-quiz/" class="step" target="_blank">
+        <div class="step-num">1</div>
+        <h3>Take the Quiz</h3>
+        <p>Find out your #1 self-sabotage pattern in under 2 minutes. It's the fastest way to understand what's actually been holding you back.</p>
+        <div class="step-link">Start the quiz <span class="step-arrow">→</span></div>
+      </a>
+      <a href="https://pro-coach-joe.github.io/client-intake-form/" class="step" target="_blank">
+        <div class="step-num">2</div>
+        <h3>Complete Your Intake</h3>
+        <p>Tell me about your goals, your schedule, your health, and your life. The more I know, the better I can build a plan that actually fits you.</p>
+        <div class="step-link">Fill out intake form <span class="step-arrow">→</span></div>
+      </a>
+      <a href="https://pro-coach-joe.github.io/client-agreement/" class="step" target="_blank">
+        <div class="step-num">3</div>
+        <h3>Sign Your Agreement</h3>
+        <p>Review and sign your client services agreement. Once that's done, we lock in your start date and get to work.</p>
+        <div class="step-link">Review agreement <span class="step-arrow">→</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="offer" id="offer">
+  <div class="section-inner">
+    <div class="section-label">The Program</div>
+    <h2 class="section-title">16 weeks. Built around your life.</h2>
+    <p class="section-sub">This isn't a cookie-cutter program. Everything is customized to your schedule, your goals, and adjusted every week based on how you're actually doing.</p>
+    <div class="offer-grid">
+      <div class="offer-item">
+        <div class="offer-icon">📋</div>
+        <div>
+          <h4>Custom Strength Plan</h4>
+          <p>Built for 3–4 days a week around your schedule. Delivered through the Trainerize app so you always know exactly what to do.</p>
+        </div>
+      </div>
+      <div class="offer-item">
+        <div class="offer-icon">🥗</div>
+        <div>
+          <h4>Habit-Based Nutrition Coaching</h4>
+          <p>No rigid meal plans. A practical nutrition approach that fits your work life, your family, and your social calendar.</p>
+        </div>
+      </div>
+      <div class="offer-item">
+        <div class="offer-icon">📞</div>
+        <div>
+          <h4>Weekly Check-In &amp; Support</h4>
+          <p>A weekly check-in call plus direct messaging access so you're never stuck, never guessing, and never on your own.</p>
+        </div>
+      </div>
+      <div class="offer-item">
+        <div class="offer-icon">🔄</div>
+        <div>
+          <h4>Weekly Adjustments</h4>
+          <p>Travel, stress, a rough week — your plan adapts with you. No starting over, no falling off. Just adjustments and forward motion.</p>
+        </div>
+      </div>
+      <div class="offer-item">
+        <div class="offer-icon">📱</div>
+        <div>
+          <h4>Trainerize App Access</h4>
+          <p>All your workouts, check-ins, and communication in one place. Easy to use, even on your busiest days.</p>
+        </div>
+      </div>
+      <div class="offer-item">
+        <div class="offer-icon">🎯</div>
+        <div>
+          <h4>Online &amp; In-Person Options</h4>
+          <p>Based in the Jackson, CA area or anywhere else — coaching is available fully online so your location is never a barrier.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-block" id="get-started">
+  <h2>Ready to stop starting over?</h2>
+  <p>Book a free 15–20 minute Game Plan Call. I'll learn about your schedule, your goals, and show you exactly what 16 weeks together would look like. No pressure, no pitch.</p>
+  <a href="mailto:train@procoachjoe.com?subject=Game Plan Call Request" class="btn-primary">Book Your Free Game Plan Call →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Premier Health &amp; Lifestyle</div>
+  <p>
+    12275 Martell Road #17, Jackson, CA 95642<br>
+    <a href="tel:2144229212">214-422-9212</a> &nbsp;·&nbsp; <a href="mailto:train@procoachjoe.com">train@procoachjoe.com</a>
+  </p>
+  <div class="footer-links">
+    <a href="https://pro-coach-joe.github.io/sabotage-quiz/">Sabotage Quiz</a>
+    <a href="https://pro-coach-joe.github.io/client-intake-form/">Client Intake</a>
+    <a href="https://pro-coach-joe.github.io/client-agreement/">Client Agreement</a>
+  </div>
+  <p style="margin-top:20px;font-size:.72rem;opacity:.5;">© 2026 Premier Health &amp; Lifestyle. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
